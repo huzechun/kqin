@@ -1,0 +1,58 @@
+<!--top 部分-->
+<include file="Public/top"/>
+<!--左边导航栏-->
+<include file="Public/left"/>
+<!--main部分-->
+<div id="staffList" style="width: 85%;float: left;padding-left: 15%">
+    <div class="place">
+        <span>位置：</span>
+        <ul class="placeul">
+            <li><a href="{:U('Staff/staffList')}">员工信息管理</a></li>
+            <li><a href="{:U('Staff/updateStaff')}">修改员工信息</a></li>
+        </ul>
+    </div>
+
+    <div class="formbody">
+
+        <div class="formtext">Hi，<b>admin</b>，欢迎使用添加员工功能！</div>
+        <ul class="forminfo">
+            <li><label>名称<b>*</b></label><input id="name" type="text" class="dfinput" value="{$data.name}"/></li>
+            <li><label>工号<b>*</b></label><input id="staff_id" type="text" class="dfinput" value="{$data.staff_id}"/>
+            </li>
+            <li><label>性别</label>
+                <input name="gender" type="radio" value="1"
+                <if condition="$data.gender eq 1 ">checked="checked"</if>
+                />男&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="gender" type="radio" value="0"
+                <if condition="$data.gender eq 0 ">checked="checked"</if>
+                />女</cite>
+            </li>
+            <li><label>部门<b>*</b></label>
+                <div class="vocation">
+                    <select class="select1" id="department">
+                        <option>{$data.department}</option>
+                        <option>口腔科</option>
+                        <option>眼科</option>
+                        <option>耳鼻科</option>
+                    </select>
+                </div>
+            </li>
+
+            <li><label>年假</label><input id="annul_holidays" type="text" class="dfinput"
+                                                value="{$data.annul_holidays}"/></li>
+            <li><label>积分</label><input id="points" type="text" class="dfinput" value="{$data.points}"/></li>
+            <li><label>入职日期</label><input id="entry_date" value="{$data.entry_date}" type="text" class="Wdate"
+                                                  onFocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})"
+                                                  style="width: 190px;height: 34px; padding-left: 10px;"/></li>
+            <li><label>联系电话</label><input id="telephone" value="{$data.telephone}" type="text" class="dfinput"/>
+            </li>
+            <li style="display: none"><label>id<b>*</b></label><input id="id" value="{$data.id}" type="text" class="dfinput"/></li>
+            <li style="display: none"><label>page<b>*</b></label><input id="page" value="{$data.page}" type="text" class="dfinput"/></li>
+            <li><input id="btn_updateStaff" type="button" class="btn" value="提交"/> <label>&nbsp;</label>
+                <input id="cancel_btn_updateStaff" type="button" class="btn" value="取消"/>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--页脚-->
+<include file="Public/footer"/>

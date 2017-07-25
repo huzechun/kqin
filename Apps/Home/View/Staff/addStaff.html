@@ -1,0 +1,50 @@
+<!--top 部分-->
+<include file="Public/top"/>
+<!--左边导航栏-->
+<include file="Public/left"/>
+<!--main部分-->
+<div id="staffList" style="width: 85%;float: left;padding-left: 15%">
+    <div class="place">
+        <span>位置：</span>
+        <ul class="placeul">
+            <li><a href="{:U('Staff/staffList')}">员工信息管理</a></li>
+            <li><a href="">添加员工</a></li>
+        </ul>
+    </div>
+
+    <div class="formbody">
+        <div class="formtext">Hi，<b>{$username}</b>，欢迎使用添加员工功能！</div>
+        <ul class="forminfo">
+            <li><label>姓名<b>*</b></label><input id="name" type="text" class="dfinput"/></li>
+            <li><label>工号<b>*</b></label><input id="staff_id" type="text" class="dfinput"/></li>
+            <li><label>性别<b>*</b></label>
+                <cite>
+                <input name="gender" type="radio" value="1" checked="checked"/>男&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="gender" type="radio" value="0"/>女
+                </cite>
+            </li>
+            <li><label>部门<b>*</b></label>
+                <div class="vocation">
+                    <select class="select3" id="department">
+                        <option>全部</option>
+                        <option>口腔科</option>
+                        <option>眼科</option>
+                        <option>耳鼻科</option>
+                    </select>
+                </div>
+            </li>
+
+            <li><label>年假</label><input id="annul_holidays" type="text" class="dfinput"/></li>
+            <li><label>积分<b>*</b></label><input id="points" type="text" class="dfinput"/></li>
+            <li><label>入职日期<b>*</b></label><input id="entry_date" type="text" class="Wdate"
+                                                  onFocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})"
+                                                  style="width: 190px;height: 34px; padding-left: 10px;"/></li>
+            <li><label>联系电话</label><input id="telephone" type="text" class="dfinput"/></li>
+            <li><input id="btn_addStaff" type="button" class="btn" value="提交"/> <label>&nbsp;</label>
+                <input id="cancel_btn_addStaff" type="button" class="btn" value="取消"/>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--页脚-->
+<include file="Public/footer"/>
